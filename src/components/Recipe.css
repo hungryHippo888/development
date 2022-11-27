@@ -1,0 +1,8 @@
+.cardWrapper {
+    display: grid;
+    border-color: rebeccapurple;
+}
+
+.image {
+    max-width: 350px;
+}

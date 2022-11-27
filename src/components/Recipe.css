@@ -1,8 +1,18 @@
 .cardWrapper {
-    display: grid;
+    position: relative;
     border-color: rebeccapurple;
 }
 
 .image {
     max-width: 350px;
 }
+
+.cardWrapper .front {
+    transform: rotateY(90deg);
+    position: absolute;
+}
+
+.flipped .front {
+    transform: rotateY(0deg);
+}
+

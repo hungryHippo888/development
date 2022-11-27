@@ -4,21 +4,9 @@ import cn from "classnames";
 function FlipCard({ card }) {
   const [showBack, setShowBack] = useState(false);
 
-  function handleClick() {
-    if (card.variant === "click") {
-      setShowBack(!showBack);
-    }
-  }
-
   function handleFocus() { 
     if (card.variant === "focus") { 
       setShowBack(true); 
-    } 
-  } 
-
-  function handleBlur() { 
-    if (card.variant === "focus") { 
-      setShowBack(false); 
     } 
   } 
 
@@ -28,9 +16,7 @@ function FlipCard({ card }) {
       className={cn("flip-card-outer", { 
         "focus-trigger": card.variant === "focus" 
       })} 
-      onClick={handleClick}
       onFocus={handleFocus} 
-      onBlur={handleBlur} 
     >
       <div
         className={cn("flip-card-inner", {

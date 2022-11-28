@@ -1,10 +1,10 @@
 [
   {
-    "name": "Lemon Pepper Steak",
+    "name": "Eggs Benedict",
     "price": 8.64,
     "calories": 1260,
     "toPrepare": 45,
-    "image": "images/bimbibap.jpeg",
+    "image": "images/eggs-benedict.jpeg",
     "ingredients": "5/4 lbs chuck steak, 1/4 tsps dill weed, 1/4 cup fresh lemon juice, 1 tsp black pepper, salt, 1/4 cup water",
     "duration": "45 minutes",
     "variant": "hover",
@@ -12,11 +12,11 @@
     "back": "Back"
   },
   {
-    "name": "Lemon Pepper Steak",
+    "name": "Pancakes",
     "price": 8.64,
     "calories": 1260,
     "toPrepare": 45,
-    "image": "images/pizza.jpeg",
+    "image": "images/pancakes.jpeg",
     "ingredients": "5/4 lbs chuck steak, 1/4 tsps dill weed, 1/4 cup fresh lemon juice, 1 tsp black pepper, salt, 1/4 cup water",
     "duration": "45 minutes",
     "variant": "hover",
@@ -24,11 +24,11 @@
     "back": "Back"
   },
   {
-    "name": "Lemon Pepper Steak",
+    "name": "Toast",
     "price": 8.64,
     "calories": 1260,
     "toPrepare": 45,
-    "image": "images/lemon-pepper-steak.jpeg",
+    "image": "images/toast.png",
     "ingredients": "5/4 lbs chuck steak, 1/4 tsps dill weed, 1/4 cup fresh lemon juice, 1 tsp black pepper, salt, 1/4 cup water",
     "duration": "45 minutes",
     "variant": "hover",
@@ -36,11 +36,11 @@
     "back": "Back"
   },
   {
-    "name": "Lemon Pepper Steak",
+    "name": "Nutella Crepe",
     "price": 8.64,
     "calories": 1260,
     "toPrepare": 45,
-    "image": "images/lemon-pepper-steak.jpeg",
+    "image": "images/crepe.jpeg",
     "ingredients": "5/4 lbs chuck steak, 1/4 tsps dill weed, 1/4 cup fresh lemon juice, 1 tsp black pepper, salt, 1/4 cup water",
     "duration": "45 minutes",
     "variant": "hover",
@@ -48,11 +48,11 @@
     "back": "Back"
   },
   {
-    "name": "Lemon Pepper Steak",
+    "name": "Crossaint",
     "price": 8.64,
     "calories": 1260,
     "toPrepare": 45,
-    "image": "images/lemon-pepper-steak.jpeg",
+    "image": "images/crossaint.jpeg",
     "ingredients": "5/4 lbs chuck steak, 1/4 tsps dill weed, 1/4 cup fresh lemon juice, 1 tsp black pepper, salt, 1/4 cup water",
     "duration": "45 minutes",
     "variant": "hover",
@@ -60,11 +60,11 @@
     "back": "Back"
   },
   {
-    "name": "Lemon Pepper Steak",
+    "name": "Granola",
     "price": 8.64,
     "calories": 1260,
     "toPrepare": 45,
-    "image": "images/lemon-pepper-steak.jpeg",
+    "image": "images/granola.png",
     "ingredients": "5/4 lbs chuck steak, 1/4 tsps dill weed, 1/4 cup fresh lemon juice, 1 tsp black pepper, salt, 1/4 cup water",
     "duration": "45 minutes",
     "variant": "hover",
@@ -72,11 +72,11 @@
     "back": "Back"
   },
   {
-    "name": "Lemon Pepper Steak",
+    "name": "Avacado Toast",
     "price": 8.64,
     "calories": 1260,
     "toPrepare": 45,
-    "image": "images/lemon-pepper-steak.jpeg",
+    "image": "images/avacado-toast.jpeg",
     "ingredients": "5/4 lbs chuck steak, 1/4 tsps dill weed, 1/4 cup fresh lemon juice, 1 tsp black pepper, salt, 1/4 cup water",
     "duration": "45 minutes",
     "variant": "hover",
@@ -84,11 +84,11 @@
     "back": "Back"
   },
   {
-    "name": "Lemon Pepper Steak",
+    "name": "Belgian Waffle",
     "price": 8.64,
     "calories": 1260,
     "toPrepare": 45,
-    "image": "images/lemon-pepper-steak.jpeg",
+    "image": "images/belgian-waffle.jpeg",
     "ingredients": "5/4 lbs chuck steak, 1/4 tsps dill weed, 1/4 cup fresh lemon juice, 1 tsp black pepper, salt, 1/4 cup water",
     "duration": "45 minutes",
     "variant": "hover",
@@ -96,11 +96,11 @@
     "back": "Back"
   },
   {
-    "name": "Lemon Pepper Steak",
+    "name": "Bacon Egg and Cheese",
     "price": 8.64,
     "calories": 1260,
     "toPrepare": 45,
-    "image": "images/lemon-pepper-steak.jpeg",
+    "image": "images/bacon-egg-cheese.jpeg",
     "ingredients": "5/4 lbs chuck steak, 1/4 tsps dill weed, 1/4 cup fresh lemon juice, 1 tsp black pepper, salt, 1/4 cup water",
     "duration": "45 minutes",
     "variant": "hover",
@@ -108,11 +108,35 @@
     "back": "Back"
   },
   {
-    "name": "Lemon Pepper Steak",
+    "name": "Hashbrowns",
     "price": 8.64,
     "calories": 1260,
     "toPrepare": 45,
-    "image": "images/lemon-pepper-steak.jpeg",
+    "image": "images/hash-brown.jpeg",
+    "ingredients": "5/4 lbs chuck steak, 1/4 tsps dill weed, 1/4 cup fresh lemon juice, 1 tsp black pepper, salt, 1/4 cup water",
+    "duration": "45 minutes",
+    "variant": "hover",
+    "front": "Hover",
+    "back": "Back"
+  },
+  {
+    "name": "Fried Egg",
+    "price": 8.64,
+    "calories": 1260,
+    "toPrepare": 45,
+    "image": "images/fried-egg.jpeg",
+    "ingredients": "5/4 lbs chuck steak, 1/4 tsps dill weed, 1/4 cup fresh lemon juice, 1 tsp black pepper, salt, 1/4 cup water",
+    "duration": "45 minutes",
+    "variant": "hover",
+    "front": "Hover",
+    "back": "Back"
+  },
+  {
+    "name": "Omelette",
+    "price": 8.64,
+    "calories": 1260,
+    "toPrepare": 45,
+    "image": "images/omelette.jpeg",
     "ingredients": "5/4 lbs chuck steak, 1/4 tsps dill weed, 1/4 cup fresh lemon juice, 1 tsp black pepper, salt, 1/4 cup water",
     "duration": "45 minutes",
     "variant": "hover",

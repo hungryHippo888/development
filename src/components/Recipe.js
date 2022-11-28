@@ -64,7 +64,7 @@ function Recipe({
       >
         <div className="card front">
           <div className="card-body d-flex justify-content-center align-items-center" style={{ backgroundRepeat: "no-repeat", backgroundSize: "cover",
-      backgroundImage: `url(${image})`}}>
+      backgroundImage: `url(${image})`, borderRadius: "20px", backgroundPosition: "right 0px bottom 0px"}}>
             <p className="card-text fs-1 fw-bold" style={{position: "absolute", bottom: "0"}}>{name}</p>
           </div>
         </div>

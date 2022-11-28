@@ -1,26 +1,23 @@
-import { useState } from "react";
+import { useState } from "react"; 
 import cn from "classnames";
 
 function FlipCard({ card }) {
-  const [showBack, setShowBack] = useState(false);
+  const [showBack, setShowBack] = useState(false); 
 
-  function handleFocus() { 
-    if (card.variant === "focus") { 
-      setShowBack(true); 
+  function handleClick() { 
+    if (card.variant === "click") { 
+      setShowBack(!showBack); 
     } 
   } 
 
   return (
     <div
-      tabIndex={card.id} 
-      className={cn("flip-card-outer", { 
-        "focus-trigger": card.variant === "focus" 
-      })} 
-      onFocus={handleFocus} 
+      className="flip-card-outer"
+      onClick={handleClick} 
     >
       <div
         className={cn("flip-card-inner", {
-          showBack,
+          showBack, 
           "hover-trigger": card.variant === "hover"
         })}
       >

@@ -5,3 +5,12 @@
 .grid {
   display: grid;
 }
+
+.header {
+  background-color: #D7B29D;
+  border-radius: 20px;
+  width: 35vw;
+  margin: auto;
+  margin-top: 30px;
+  padding: 10px;
+}

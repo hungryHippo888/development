@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
-body {
+body{
   font-family: 'Ubuntu', sans-serif;
   // background-image: radial-gradient(farthest-corner at 40px 40px,
   // #f35 0%, #43e 100%);
+}
+
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 50px;
 }
 
 .container {
@@ -54,8 +60,8 @@ body {
   
       &.back {
         transform: rotateY(180deg);
-        background-color: #fff;
-        color: #2d2d2d;
+        background-color: #8E4A49;
+        color: #fff;
         border-radius: 20px;
       }
     }

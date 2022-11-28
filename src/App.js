@@ -1,6 +1,6 @@
 import './App.css';
 import { Card } from '@mui/material';
-import { useState } from "react";
+import { React, useState } from "react";
 import foodData from "./assets/food-data.json";
 import Recipe from "./components/Recipe";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -22,12 +22,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>HungryHippo888's Recipes</h1> {/* TODO: personalize your bakery (if you want) */}
+      <div className='header'>
+      <h1>Brock's Breakfast Foods</h1> 
+      </div>
       <button>Cost</button>
       <button>Calories</button>
       <div className="container">
       <Row>
-        {/* <div class="col d-flex flex-column flex-md-row justify-content-around align-items-center"> */}
       {foodData.map((item) => ( // TODO: map bakeryData to BakeryItem components
       <Recipe card = {item} name={item.name} description={item.description} price={item.price} calories = {item.calories} time={item.duration} image={item.image} ingredients={item.ingredients} addToCart={addToCart}></Recipe>
       ))}

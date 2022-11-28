@@ -7,6 +7,8 @@ import caloriesIcon from "../icons/caloriesIcon.png";
 import timeIcon from "../icons/timeIcon.svg";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Icon } from '@mui/material';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function Recipe({
   name,
@@ -20,11 +22,10 @@ function Recipe({
   card,
 }) {
   const [showBack, setShowBack] = useState(false);
+  const [favorited, setFavorited] = useState(false);
 
   function handleClick() {
-    if (card.variant === "click") {
-      setShowBack(!showBack);
-    }
+    setShowBack(!showBack);
   }
 
   function handleFocus() {
@@ -39,22 +40,24 @@ function Recipe({
     }
   }
 
-//   <div className="cardWrapper" onClick={() => flipCard(flipped)}>
-//   <h1 className="back">hello</h1>
-// </div>
-// </div>
+  function favoritedItem(e) {
+    e.stopPropagation();
+    if(!favorited) {
+      addToCart(name, price, ingredients);
+      setFavorited(!favorited);
+    }
+    else {
+      setFavorited(!favorited);
+    }
+  }
 
   return (
 
     <>
     <div
       tabIndex={card.id}
-      className={cn("flip-card-outer", {
-        "focus-trigger": card.variant === "focus",
-      })}
-      onClick={handleClick}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
+      className="flip-card-outer"
+      onClick={() => setShowBack(!showBack)}
     >
       <div
         className={cn("flip-card-inner", {
@@ -65,27 +68,28 @@ function Recipe({
         <div className="card front">
           <div className="card-body d-flex justify-content-center align-items-center" style={{ backgroundRepeat: "no-repeat", backgroundSize: "cover",
       backgroundImage: `url(${image})`, borderRadius: "20px", backgroundPosition: "right 0px bottom 0px"}}>
+            <FavoriteIcon isActive={favorited} onClick={(e) => favoritedItem(e)} style={{position: "absolute", top: "15px", right: "15px", color: favorited ? "red" : "white"}}></FavoriteIcon>
             <p className="card-text fs-1 fw-bold" style={{position: "absolute", bottom: "0"}}>{name}</p>
           </div>
         </div>
         <div className="card back">
           <div className="card-body container justify-content-center align-items-center">
             <Row>
-            <img className="image" src={costIcon} alt="costIcon" style={{width: "25%", height: "25%", padding: "15px"}}/>
+            <img className="image" src={costIcon} alt="costIcon" style={{width: "25%", height: "25%", paddingTop: "15px"}}/>
             <Col>
-            <p className="card-text fs-1 fw-bold" style={{padding: "15px"}}>${price}</p>
+            <p className="card-text fs-2 fw-bold" style={{paddingTop: "15px"}}>${price}</p>
             </Col>
             </Row>
             <Row>
-            <img className="image" src={caloriesIcon} alt="caloriesIcon" style={{width: "25%", height: "25%", padding: "15px"}}/>
+            <img className="image" src={caloriesIcon} alt="caloriesIcon" style={{width: "25%", height: "25%", paddingTop: "15px"}}/>
             <Col>
-            <p className="card-text fs-1 fw-bold" style={{padding: "15px"}}>{calories} calories</p>
+            <p className="card-text fs-2 fw-bold" style={{paddingTop: "15px"}}>{calories} calories</p>
             </Col>
             </Row>
             <Row>
-            <img className="image" src={timeIcon} alt="timeIcon" style={{width: "25%", height: "25%", padding: "15px"}}/>
+            <img className="image" src={timeIcon} alt="timeIcon" style={{width: "25%", height: "25%", paddingTop: "15px"}}/>
             <Col>
-            <p className="card-text fs-1 fw-bold" style={{padding: "15px"}}>{time} minutes</p>
+            <p className="card-text fs-2 fw-bold" style={{paddingTop: "15px"}}>{time}</p>
             </Col>
             </Row>
 
@@ -95,7 +99,7 @@ function Recipe({
         </div>
       </div>
     </div>
-    <Button onClick={() => addToCart(name, price, ingredients)} style={{width: "100px", justifyContent: "bottom"}}>Add to Cart</Button>
+    {/* <Button onClick={() => addToCart(name, price, ingredients)} style={{width: "100px", justifyContent: "bottom"}}>Add to Cart</Button> */}
     </>
   );
 }

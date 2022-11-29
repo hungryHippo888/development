@@ -92,7 +92,14 @@ function sortByPrice() {
       <Button onClick={() => sortByPrice()}>Sort By Price</Button>
       <div className="container">
       <Row>
-      {filteredData.map((item) => ( // TODO: map bakeryData to BakeryItem components
+      {filteredData
+      .filter((item) => {
+        const matchesVegan = (filterByVegan ? (item.isVegan === "true") : true)
+        const matchesIsGlutenFree = (filterByGlutenFree ? (item.isGlutenFree === "true") : true)
+        return matchesVegan && matchesIsGlutenFree
+      })
+      .sort()
+      .map((item) => ( // TODO: map bakeryData to BakeryItem components
       <Recipe card = {item} isGlutenFree={item.isGlutenFree} isVegan = {item.isVegan} name={item.name} description={item.description} price={item.price} calories = {item.calories} time={item.duration} image={item.image} ingredients={item.ingredients} addToCart={addToCart} removeFromTotal={removeFromTotal}></Recipe>
       ))}
       </Row>

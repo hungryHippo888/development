@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/development/static/css/main.c876d66f.css",
-    "main.js": "/development/static/js/main.4d58bb48.js",
+    "main.css": "/development/static/css/main.7483c34e.css",
+    "main.js": "/development/static/js/main.be70c037.js",
+    "static/media/gluten-free.png": "/development/static/media/gluten-free.ebb5d3d3b50bf79ecc56.png",
+    "static/media/veganIcon.png": "/development/static/media/veganIcon.da299e4d05b0d92f92e2.png",
     "static/media/timeIcon.svg": "/development/static/media/timeIcon.731512a1559a5dda9d28891fdca15b05.svg",
     "static/media/costIcon.svg": "/development/static/media/costIcon.5d882adf1a176bdb59d9ebf5b147cafe.svg",
     "index.html": "/development/index.html",
-    "main.c876d66f.css.map": "/development/static/css/main.c876d66f.css.map",
-    "main.4d58bb48.js.map": "/development/static/js/main.4d58bb48.js.map"
+    "main.7483c34e.css.map": "/development/static/css/main.7483c34e.css.map",
+    "main.be70c037.js.map": "/development/static/js/main.be70c037.js.map"
   },
   "entrypoints": [
-    "static/css/main.c876d66f.css",
-    "static/js/main.4d58bb48.js"
+    "static/css/main.7483c34e.css",
+    "static/js/main.be70c037.js"
   ]
 }

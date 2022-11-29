@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.scss";
 import Row from 'react-bootstrap/Row';
 import { Button } from 'react-bootstrap';
+import { FormGroup } from '@mui/material';
 
 function App() {
   // TODO: use useState to create a state variable to hold the state of the cart
@@ -19,6 +20,8 @@ function App() {
   const [filterByVegan, setFilterByVegan] = useState(false);
   const [filterByGlutenFree, setFilterByGlutenFree] = useState(false);
   const [priceSort, setSortByPrice] = useState(false);
+  const [sortState, setSortState] = useState("none");
+
   // var filteredData = foodData;
 
   function addToCart(name, price, cals) {
@@ -33,28 +36,10 @@ function App() {
   } 
 
   function filterIsVegan() {
-    if(!filterByVegan){
-    const filtered = filteredData.filter(item => item.isVegan === "true");
-    setType("Vegan");
-    setFilteredData(filtered);
-  }
-  else {
-    // in this case, how should I revert it back?
-    setFilteredData(foodData);
-  }
   setFilterByVegan(!filterByVegan);
 }
 
 function filterIsGlutenFree() {
-  if(!filterByGlutenFree){
-    const filtered = filteredData.filter(item => item.isGlutenFree === "true");
-    setType("IsGlutenFree");
-    setFilteredData(filtered);
-  }
-  else {
-    // in this case, how should I revert it back?
-    setFilteredData(foodData);
-  }
   setFilterByGlutenFree(!filterByGlutenFree);
 }
 
@@ -71,16 +56,17 @@ function sortByPrice() {
   setSortByPrice(!priceSort);
 }
 
-  const matchesFilterType = item => {
-    // all items should be shown when no filter is selected
-    if(type === "All") { 
-      return true
-    } else if (type === item.type) {
-      return true
-    } else {
-      return false
-    }
-  }
+const sortMethods = {
+  none: { method: (a, b) => {
+    return a - b
+  }},
+  price: { method: (a, b) => {
+    return a.price - b.price
+  }},
+  calories: { method: (a, b) => {
+    return a.calories - b.calories
+  }}
+}
 
   return (
     <div className="App">
@@ -89,7 +75,12 @@ function sortByPrice() {
       </div>
       <Button onClick={() => filterIsVegan()} style = {{borderColor: "#7DAA92", borderWidth: "2px", backgroundColor: filterByVegan ? "#7DAA92" : "#FFF", color: filterByVegan ? "#FFF" : "#7DAA92"}}>Filter isVegan</Button>
       <Button onClick={() => filterIsGlutenFree()} style = {{borderColor: "#7DAA92", borderWidth: "2px", backgroundColor: filterByGlutenFree ? "#7DAA92" : "#FFF", color: filterByGlutenFree ? "#FFF" : "#7DAA92"}}>Filter by Gluten-Free</Button>
-      <Button onClick={() => sortByPrice()}>Sort By Price</Button>
+      {/* <Button onClick={() => sortByPrice()}>Sort By Price</Button> */}
+      <select defaultValue={'DEFAULT'} onChange={(e) => setSortState(e.target.value)}>
+        <option value="DEFAULT" disabled>None</option>
+        <option value="price">price</option>
+        <option value="calories">calories</option>
+      </select>
       <div className="container">
       <Row>
       {filteredData
@@ -98,14 +89,16 @@ function sortByPrice() {
         const matchesIsGlutenFree = (filterByGlutenFree ? (item.isGlutenFree === "true") : true)
         return matchesVegan && matchesIsGlutenFree
       })
-      .sort()
+      .sort( 
+        sortMethods[sortState].method
+      )      
       .map((item) => ( // TODO: map bakeryData to BakeryItem components
       <Recipe card = {item} isGlutenFree={item.isGlutenFree} isVegan = {item.isVegan} name={item.name} description={item.description} price={item.price} calories = {item.calories} time={item.duration} image={item.image} ingredients={item.ingredients} addToCart={addToCart} removeFromTotal={removeFromTotal}></Recipe>
       ))}
       </Row>
       <h2>Cart</h2>
-        <h2>Items: {cart}</h2>
-        <h2>Cart Total: ${total}</h2>
+        {/* <h2>Items: {cart}</h2>
+        <h2>Cart Total: ${total}</h2> */}
         <h3>Total Calories: {calories}</h3>
       </div>
     </div>    

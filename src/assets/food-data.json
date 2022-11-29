@@ -7,7 +7,9 @@
     "duration": "45 minutes",
     "variant": "click",
     "front": "click",
-    "back": "Back"
+    "back": "Back",
+    "isVegan": "false",
+    "isGlutenFree": "false"
   },
   {
     "name": "Pancakes",
@@ -17,7 +19,9 @@
     "duration": "30 minutes",
     "variant": "click",
     "front": "click",
-    "back": "Back"
+    "back": "Back",
+    "isVegan": "false",
+    "isGlutenFree": "false"
   },
   {
     "name": "Toast",
@@ -27,7 +31,9 @@
     "duration": "5 minutes",
     "variant": "click",
     "front": "click",
-    "back": "Back"
+    "back": "Back",
+    "isVegan": "true",
+    "isGlutenFree": "false"
   },
   {
     "name": "Nutella Crepe",
@@ -37,18 +43,22 @@
     "duration": "15 minutes",
     "variant": "click",
     "front": "click",
-    "back": "Back"
+    "back": "Back",
+    "isVegan": "false",
+    "isGlutenFree": "false"
   },
   {
-    "name": "Crossaint",
+    "name": "Croissant",
     "price": 3.99,
     "calories": 250,
-    "image": "images/crossaint.jpeg",
+    "image": "images/croissant.jpeg",
     "ingredients": "5/4 lbs chuck steak, 1/4 tsps dill weed, 1/4 cup fresh lemon juice, 1 tsp black pepper, salt, 1/4 cup water",
     "duration": "5 minutes",
     "variant": "click",
     "front": "click",
-    "back": "Back"
+    "back": "Back",
+    "isVegan": "false",
+    "isGlutenFree": "false"
   },
   {
     "name": "Granola",
@@ -58,17 +68,21 @@
     "duration": "10 minutes",
     "variant": "click",
     "front": "click",
-    "back": "Back"
+    "back": "Back",
+    "isVegan": "true",
+    "isGlutenFree": "true"
   },
   {
-    "name": "Avacado Toast",
+    "name": "Avocado Toast",
     "price": 8.64,
     "calories": 325,
-    "image": "images/avacado-toast.jpeg",
+    "image": "images/avocado-toast.jpeg",
     "duration": "10 minutes",
     "variant": "click",
     "front": "click",
-    "back": "Back"
+    "back": "Back",
+    "isVegan": "true",
+    "isGlutenFree": "false"
   },
   {
     "name": "Belgian Waffle",
@@ -78,7 +92,9 @@
     "duration": "30 minutes",
     "variant": "click",
     "front": "click",
-    "back": "Back"
+    "back": "Back",
+    "isVegan": "false",
+    "isGlutenFree": "false"
   },
   {
     "name": "Bacon Egg and Cheese",
@@ -88,7 +104,9 @@
     "duration": "15 minutes",
     "variant": "click",
     "front": "click",
-    "back": "Back"
+    "back": "Back",
+    "isVegan": "false",
+    "isGlutenFree": "false"
   },
   {
     "name": "Hashbrowns",
@@ -98,7 +116,9 @@
     "duration": "20 minutes",
     "variant": "click",
     "front": "click",
-    "back": "Back"
+    "back": "Back",
+    "isVegan": "true",
+    "isGlutenFree": "true"
   },
   {
     "name": "Fried Egg",
@@ -108,7 +128,9 @@
     "duration": "5 minutes",
     "variant": "click",
     "front": "click",
-    "back": "Back"
+    "back": "Back",
+    "isVegan": "false",
+    "isGlutenFree": "true"
   },
   {
     "name": "Omelette",
@@ -118,6 +140,8 @@
     "duration": "15 minutes",
     "variant": "click",
     "front": "click",
-    "back": "Back"
+    "back": "Back",
+    "isVegan": "false",
+    "isGlutenFree": "true"
   }
 ]

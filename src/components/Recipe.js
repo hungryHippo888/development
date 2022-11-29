@@ -5,6 +5,8 @@ import { Button } from '@mui/material';
 import costIcon from "../icons/costIcon.svg";
 import caloriesIcon from "../icons/caloriesIcon.png";
 import timeIcon from "../icons/timeIcon.svg";
+import veganIcon from "../icons/veganIcon.png";
+import glutenFreeIcon from "../icons/gluten-free.png";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Icon } from '@mui/material';
@@ -16,9 +18,11 @@ function Recipe({
   description,
   image,
   calories,
-  ingredients,
   time,
   addToCart,
+  removeFromTotal,
+  isVegan,
+  isGlutenFree,
   card,
 }) {
   const [showBack, setShowBack] = useState(false);
@@ -43,10 +47,11 @@ function Recipe({
   function favoritedItem(e) {
     e.stopPropagation();
     if(!favorited) {
-      addToCart(name, price, ingredients);
+      addToCart(name, price, calories);
       setFavorited(!favorited);
     }
     else {
+      removeFromTotal(price, calories);
       setFavorited(!favorited);
     }
   }
@@ -92,14 +97,14 @@ function Recipe({
             <p className="card-text fs-2 fw-bold" style={{paddingTop: "15px"}}>{time}</p>
             </Col>
             </Row>
-
-            {/* <img className="image" src={timeIcon} alt="timeIcon" style={{width: "25%", height: "25%"}}/>
-            <img className="image" src={caloriesIcon} alt="caloriesIcon" style={{width: "25%", height: "25%"}}/> */}
+            <Row>
+            {(isGlutenFree === "true") && <img className="image" src={glutenFreeIcon} alt="glutenFreeIcon" style={{width: "25%", height: "25%", paddingTop: "15px", margin: "auto"}}/>}
+            {(isVegan === "true") && <img className="image" src={veganIcon} alt="veganIcon" style={{width: "25%", height: "25%", paddingTop: "15px", margin: "auto"}}/>}
+            </Row>
           </div>
         </div>
       </div>
     </div>
-    {/* <Button onClick={() => addToCart(name, price, ingredients)} style={{width: "100px", justifyContent: "bottom"}}>Add to Cart</Button> */}
     </>
   );
 }

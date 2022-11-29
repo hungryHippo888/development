@@ -14,3 +14,11 @@
   margin-top: 30px;
   padding: 10px;
 }
+
+.filterButton {
+  border-color: red;
+  /* border-color: "#7DAA92"; */
+  border-width: "20px";
+}
+
+/* backgroundColor: filterByVegan ? "#7DAA92" : "#FFF", color */

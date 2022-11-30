@@ -24,10 +24,9 @@ function Recipe({
   isVegan,
   isGlutenFree,
   card,
-  favorited
 }) {
   const [showBack, setShowBack] = useState(false);
-  // const [favorited, setFavorited] = useState(false);
+  const [favorited, setFavorited] = useState(false);
 
   function handleClick() {
     setShowBack(!showBack);
@@ -47,13 +46,13 @@ function Recipe({
 
   function favoritedItem(e) {
     e.stopPropagation();
-    if(true) {
-      addToCart(name, price, calories, image, time, isVegan, isGlutenFree, favorited);
-      // setFavorited(!favorited);
+    if(!favorited) {
+      addToCart(name, price, calories, image, time, isVegan, isGlutenFree);
+      setFavorited(!favorited);
     }
     else {
       removeFromTotal(price, calories);
-      // setFavorited(!favorited);
+      setFavorited(!favorited);
     }
   }
 

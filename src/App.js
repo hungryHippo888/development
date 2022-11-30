@@ -24,11 +24,11 @@ function App() {
   const [favCart, showFavCart] = useState(false);
   const [favoritedItems, setFavoritedItems] = useState([]);
   const [shake, setShake] = useState(false);
-  const [favorited, setFavorited] = useState(false);
+  // const [favorited, setFavorited] = useState(false);
 
   // var filteredData = foodData;
 
-  function addToCart(name, price, cals, img, duration, vegan, glutenFree) {
+  function addToCart(name, price, cals, img, duration, vegan, glutenFree, favorited) {
     // setCart(cart + name + ", ");
     setTotal(total + price);
     setCalories(calories + cals);
@@ -42,10 +42,32 @@ function App() {
       "front": "click",
       "back": "Back",
       "isVegan": vegan,
-      "isGlutenFree": glutenFree
+      "isGlutenFree": glutenFree,
+      "favorited": true
     };
     const newItems = [...favoritedItems, newItem];
     setFavoritedItems(newItems);
+    const currItem = {
+      "name": name,
+      "price": price,
+      "calories": cals,
+      "image": img,
+      "duration": duration,
+      "variant": "click",
+      "front": "click",
+      "back": "Back",
+      "isVegan": vegan,
+      "isGlutenFree": glutenFree,
+      "favorited": favorited
+    };
+    var updatedFilteredData = [...filteredData];
+    const index = updatedFilteredData.findIndex(item => {
+      return item.name === name;
+    });
+    updatedFilteredData[index] = newItem;
+    setFilteredData(updatedFilteredData);
+    console.log(index);
+    console.log(updatedFilteredData);
   } 
   
   function removeFromTotal(price, cals) {
@@ -82,19 +104,6 @@ function resetItems() {
 function goToFavorites() {
   showFavCart(!favCart);
 }
-
-// function sortByPrice() {
-//   if(!priceSort) {
-//   const filtered = filteredData.sort((a, b) => {
-//     return a.price - b.price;
-//   });
-//   setFilteredData(filtered);
-//   }
-//   else {
-//     setFilteredData(foodData);
-//   }
-//   setSortByPrice(!priceSort);
-// }
 
 const sortMethods = {
   none: { method: (a, b) => {
@@ -141,8 +150,8 @@ const sortMethods = {
       .sort( 
         sortMethods[sortState].method
       )      
-      .map((item) => ( // TODO: map bakeryData to BakeryItem components
-      <Recipe card = {item} isGlutenFree={item.isGlutenFree} isVegan = {item.isVegan} name={item.name} description={item.description} price={item.price} calories = {item.calories} time={item.duration} image={item.image} ingredients={item.ingredients} addToCart={addToCart} removeFromTotal={removeFromTotal}></Recipe>
+      .map((item) => (
+      <Recipe card = {item} favorited={item.favorited} isGlutenFree={item.isGlutenFree} isVegan = {item.isVegan} name={item.name} description={item.description} price={item.price} calories = {item.calories} time={item.duration} image={item.image} ingredients={item.ingredients} addToCart={addToCart} removeFromTotal={removeFromTotal}></Recipe>
       ))}
       </Row>
       </div>

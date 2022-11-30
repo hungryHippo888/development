@@ -9,7 +9,8 @@
     "front": "click",
     "back": "Back",
     "isVegan": "false",
-    "isGlutenFree": "false"
+    "isGlutenFree": "false",
+    "favorited": false
   },
   {
     "name": "Pancakes",
@@ -21,7 +22,8 @@
     "front": "click",
     "back": "Back",
     "isVegan": "false",
-    "isGlutenFree": "false"
+    "isGlutenFree": "false",
+    "favorited": false
   },
   {
     "name": "Toast",
@@ -33,7 +35,8 @@
     "front": "click",
     "back": "Back",
     "isVegan": "true",
-    "isGlutenFree": "false"
+    "isGlutenFree": "false",
+    "favorited": false
   },
   {
     "name": "Nutella Crepe",
@@ -45,7 +48,8 @@
     "front": "click",
     "back": "Back",
     "isVegan": "false",
-    "isGlutenFree": "false"
+    "isGlutenFree": "false",
+    "favorited": false
   },
   {
     "name": "Croissant",
@@ -58,7 +62,8 @@
     "front": "click",
     "back": "Back",
     "isVegan": "false",
-    "isGlutenFree": "false"
+    "isGlutenFree": "false",
+    "favorited": false
   },
   {
     "name": "Granola",
@@ -70,7 +75,8 @@
     "front": "click",
     "back": "Back",
     "isVegan": "true",
-    "isGlutenFree": "true"
+    "isGlutenFree": "true",
+    "favorited": false
   },
   {
     "name": "Avocado Toast",
@@ -82,7 +88,8 @@
     "front": "click",
     "back": "Back",
     "isVegan": "true",
-    "isGlutenFree": "false"
+    "isGlutenFree": "false",
+    "favorited": false
   },
   {
     "name": "Belgian Waffle",
@@ -94,7 +101,8 @@
     "front": "click",
     "back": "Back",
     "isVegan": "false",
-    "isGlutenFree": "false"
+    "isGlutenFree": "false",
+    "favorited": false
   },
   {
     "name": "Bacon Egg and Cheese",
@@ -106,7 +114,8 @@
     "front": "click",
     "back": "Back",
     "isVegan": "false",
-    "isGlutenFree": "false"
+    "isGlutenFree": "false",
+    "favorited": false
   },
   {
     "name": "Hashbrowns",
@@ -118,7 +127,8 @@
     "front": "click",
     "back": "Back",
     "isVegan": "true",
-    "isGlutenFree": "true"
+    "isGlutenFree": "true",
+    "favorited": false
   },
   {
     "name": "Fried Egg",
@@ -130,7 +140,8 @@
     "front": "click",
     "back": "Back",
     "isVegan": "false",
-    "isGlutenFree": "true"
+    "isGlutenFree": "true",
+    "favorited": false
   },
   {
     "name": "Omelette",
@@ -142,6 +153,7 @@
     "front": "click",
     "back": "Back",
     "isVegan": "false",
-    "isGlutenFree": "true"
+    "isGlutenFree": "true",
+    "favorited": false
   }
 ]

@@ -2,6 +2,7 @@
 
 body{
   font-family: 'Ubuntu', sans-serif;
+  // background-image: url();
   // background-image: radial-gradient(farthest-corner at 40px 40px,
   // #f35 0%, #43e 100%);
 }
@@ -10,6 +11,12 @@ h1 {
   font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   font-size: 50px;
+}
+
+h2 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 30px;  
 }
 
 .container {

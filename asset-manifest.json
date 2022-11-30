@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/development/static/css/main.8bd1c42a.css",
-    "main.js": "/development/static/js/main.20f74901.js",
+    "main.js": "/development/static/js/main.67f50f4b.js",
     "static/media/gluten-free.png": "/development/static/media/gluten-free.ebb5d3d3b50bf79ecc56.png",
     "static/media/veganIcon.png": "/development/static/media/veganIcon.da299e4d05b0d92f92e2.png",
     "static/media/timeIcon.svg": "/development/static/media/timeIcon.731512a1559a5dda9d28891fdca15b05.svg",
     "static/media/costIcon.svg": "/development/static/media/costIcon.5d882adf1a176bdb59d9ebf5b147cafe.svg",
     "index.html": "/development/index.html",
     "main.8bd1c42a.css.map": "/development/static/css/main.8bd1c42a.css.map",
-    "main.20f74901.js.map": "/development/static/js/main.20f74901.js.map"
+    "main.67f50f4b.js.map": "/development/static/js/main.67f50f4b.js.map"
   },
   "entrypoints": [
     "static/css/main.8bd1c42a.css",
-    "static/js/main.20f74901.js"
+    "static/js/main.67f50f4b.js"
   ]
 }

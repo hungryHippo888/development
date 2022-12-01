@@ -13,7 +13,6 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 function MenuItem({
   name,
   price,
-  description,
   image,
   calories,
   time,

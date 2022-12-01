@@ -13,6 +13,7 @@
   margin: auto;
   margin-top: 30px;
   padding: 10px;
+  align-items: center;
 }
 
 .filterButton {
@@ -28,9 +29,9 @@
 .verticalMenu {
   display: flex;
   flex-direction: column;
-  margin: 25px 0;
+  margin: 25px 25px;
   background-color: #D7B29D;
-  padding: 10px;
+  padding: 50px;
   border-radius: 20px;
 }
 

@@ -47,13 +47,11 @@ function Recipe({
 
   function favoritedItem(e) {
     e.stopPropagation();
-    if(true) {
+    if(!favorited) {
       addToCart(name, price, calories, image, time, isVegan, isGlutenFree, favorited);
-      // setFavorited(!favorited);
     }
     else {
-      removeFromTotal(price, calories);
-      // setFavorited(!favorited);
+      removeFromTotal(name, price, calories, image, time, isVegan, isGlutenFree, favorited);
     }
   }
 

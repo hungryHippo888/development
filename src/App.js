@@ -68,11 +68,33 @@ function App() {
     setFilteredData(updatedFilteredData);
     console.log(index);
     console.log(updatedFilteredData);
+    
   } 
   
-  function removeFromTotal(price, cals) {
+  function removeFromTotal(name, price, cals, img, duration, vegan, glutenFree, favorited) {
     setTotal(total - price);
     setCalories(calories - cals);
+    const newItem = {
+      "name": name,
+      "price": price,
+      "calories": cals,
+      "image": img,
+      "duration": duration,
+      "variant": "click",
+      "front": "click",
+      "back": "Back",
+      "isVegan": vegan,
+      "isGlutenFree": glutenFree,
+      "favorited": false
+    };
+    var updatedFilteredData = [...filteredData];
+    const index = updatedFilteredData.findIndex(item => {
+      return item.name === name;
+    });
+    updatedFilteredData[index] = newItem;
+    setFilteredData(updatedFilteredData);
+    const newFavoritedItems = favoritedItems.filter(item => {return item.name !== name}); 
+    setFavoritedItems(newFavoritedItems);
   } 
 
   function filterIsVegan() {
@@ -98,6 +120,8 @@ function resetItems() {
   setSortState("none");
   setFilterByVegan(false);
   setFilterByGlutenFree(false);
+  setFavoritedItems([]);
+  setFilteredData(foodData);
   animate();
 }
 
@@ -132,10 +156,10 @@ const sortMethods = {
       <Button onClick={() => resetItems()} style = {{borderColor: "#680C07", borderWidth: "2px", backgroundColor: "#680C07", color: "#FFF", margin: "10px"}} className = {shake ? `shake` : null}>Reset All Filters</Button>
       {/* <Button onClick={() => resetItems()} style = {{borderColor: "#680C07", borderWidth: "2px", backgroundColor: "#680C07", color: "#FFF", margin: "10px"}}>Reset all Items</Button> */}
       <h2>Sort By</h2>
-      <select defaultValue={'DEFAULT'} onChange={(e) => setSortState(e.target.value)}>
-        <option value="DEFAULT" disabled>None</option>
-        <option value="price">price</option>
-        <option value="calories">calories</option>
+      <select defaultValue={'none'} onChange={(e) => setSortState(e.target.value)}>
+        <option value="none">Popular</option>
+        <option value="price">Price</option>
+        <option value="calories">Calories</option>
       </select>
       <h3>Total Calories: {calories}</h3>
       </div>

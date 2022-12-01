@@ -33,6 +33,7 @@
   background-color: #D7B29D;
   padding: 50px;
   border-radius: 20px;
+  gap: 20px;
 }
 
 button.shake{

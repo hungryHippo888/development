@@ -1,4 +1,5 @@
 import './App.css';
+
 import { Card, duration } from '@mui/material';
 import { React, useState } from "react";
 import foodData from "./assets/food-data.json";
@@ -7,7 +8,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.scss";
 import Row from 'react-bootstrap/Row';
 import { Button } from 'react-bootstrap';
-import { FormGroup } from '@mui/material';
+import { FormGroup, FormControl, InputLabel, MenuItem, Select, createMuiTheme, ThemeProvider } from '@mui/material';
+import { dark } from '@mui/material/styles/createPalette';
 
 function App() {
   // TODO: use useState to create a state variable to hold the state of the cart
@@ -24,7 +26,38 @@ function App() {
   const [favCart, showFavCart] = useState(false);
   const [favoritedItems, setFavoritedItems] = useState([]);
   const [shake, setShake] = useState(false);
-  // const [favorited, setFavorited] = useState(false);
+
+  const theme = createMuiTheme({
+     palette: {
+      primary: {
+        main: '#FFF'
+      },
+      secondary: {
+        main: '#FFF'
+      },
+      action: {
+        active: "#8E4A49",
+        selected: "#7DAA92",
+        disabled: "#7DAA92",
+        disabledBackground: "#7DAA92",
+      },
+      text: {
+        primary: "#FFF",
+        secondary: "#FFF"
+      },
+      background: {
+        paper: '#8E4A49',
+        default: '#8E4A49',
+        defaultChannel: '#8E4A49'
+      },
+      typography: {
+        fontFamily: "Ubuntu, sans-serif"
+      },
+     },
+     shape: {
+      borderRadius: 20
+     }
+  })
 
   // var filteredData = foodData;
 
@@ -149,19 +182,32 @@ const sortMethods = {
       <div className="contentFlex">
       <div className="verticalMenu">
         <h2>Filter By</h2>
-      <Button onClick={() => goToFavorites()}>Show Favorite Cart</Button>
-      <Button onClick={() => filterIsVegan()} style = {{borderColor: "#7DAA92", borderWidth: "2px", backgroundColor: filterByVegan ? "#7DAA92" : "#FFF", color: filterByVegan ? "#FFF" : "#7DAA92", margin: "10px"}}>Vegan Options</Button>
-      <Button onClick={() => filterIsGlutenFree()} style = {{borderColor: "#7DAA92", borderWidth: "2px", backgroundColor: filterByGlutenFree ? "#7DAA92" : "#FFF", color: filterByGlutenFree ? "#FFF" : "#7DAA92", margin: "10px"}}>Gluten-Free Options</Button>
-      {/* <Button onClick={() => filterIsGlutenFree()} style = {{borderColor: "#7DAA92", borderWidth: "2px", backgroundColor: filterByGlutenFree ? "#7DAA92" : "#FFF", color: filterByGlutenFree ? "#FFF" : "#7DAA92", margin: "10px"}}>Favorited Options</Button> */}
-      <Button onClick={() => resetItems()} style = {{borderColor: "#680C07", borderWidth: "2px", backgroundColor: "#680C07", color: "#FFF", margin: "10px"}} className = {shake ? `shake` : null}>Reset All Filters</Button>
-      {/* <Button onClick={() => resetItems()} style = {{borderColor: "#680C07", borderWidth: "2px", backgroundColor: "#680C07", color: "#FFF", margin: "10px"}}>Reset all Items</Button> */}
+      <Button onClick={() => filterIsVegan()} style = {{borderColor: "#7DAA92", borderWidth: "2px", backgroundColor: filterByVegan ? "#7DAA92" : "#FFF", color: filterByVegan ? "#FFF" : "#7DAA92"}}>Vegan Options</Button>
+      <Button onClick={() => filterIsGlutenFree()} style = {{borderColor: "#7DAA92", borderWidth: "2px", backgroundColor: filterByGlutenFree ? "#7DAA92" : "#FFF", color: filterByGlutenFree ? "#FFF" : "#7DAA92"}}>Gluten-Free Options</Button>
+      <Button onClick={() => goToFavorites()} style = {{borderColor: "#8E4A49", borderWidth: "2px", backgroundColor: favCart ? "#8E4A49" : "#FFF", color: favCart ? "#FFF" : "#8E4A49"}}>{favCart ? "Show All" : "Show Favorites"}</Button>
       <h2>Sort By</h2>
-      <select defaultValue={'none'} onChange={(e) => setSortState(e.target.value)}>
+      {/* <select defaultValue={'none'} onChange={(e) => setSortState(e.target.value)}>
         <option value="none">Popular</option>
         <option value="price">Price</option>
         <option value="calories">Calories</option>
-      </select>
-      <h3>Total Calories: {calories}</h3>
+      </select> */}
+      <ThemeProvider theme={theme}>
+      <FormControl fullWidth variant='filled' disableTypography	sx={{}}>
+  <InputLabel>Sort Filter</InputLabel>
+  <Select
+    onChange={(e) => setSortState(e.target.value)}
+  >
+    <MenuItem value="none">Popular</MenuItem>
+    <MenuItem value="price">Price</MenuItem>
+    <MenuItem value="calories">Calories</MenuItem>
+  </Select>
+</FormControl>
+</ThemeProvider>
+      <Button onClick={() => resetItems()} style = {{borderColor: "#680C07", borderWidth: "2px", backgroundColor: "#680C07", color: "#FFF", margin: "10px"}} className = {shake ? `shake` : null}>Reset All Filters</Button>
+      <div>
+      <h3>Total Calories:</h3>
+      <h3>{calories}</h3>
+      </div>
       </div>
       <div className="container">
       <Row>

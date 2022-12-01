@@ -1,7 +1,6 @@
-import "./Recipe.css";
+import "./MenuItem.css";
 import { useState } from "react";
 import cn from "classnames";
-import { Button } from '@mui/material';
 import costIcon from "../icons/costIcon.svg";
 import caloriesIcon from "../icons/caloriesIcon.png";
 import timeIcon from "../icons/timeIcon.svg";
@@ -9,10 +8,9 @@ import veganIcon from "../icons/veganIcon.png";
 import glutenFreeIcon from "../icons/gluten-free.png";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Icon } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
-function Recipe({
+function MenuItem({
   name,
   price,
   description,
@@ -108,4 +106,4 @@ function Recipe({
   );
 }
 
-export default Recipe;
+export default MenuItem;
